@@ -1,0 +1,53 @@
+<html>
+<title>Flowers AI</title>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Flowers AI</title>
+  </head>
+  <body>
+    <div class="container" style="margin-top: 100px;">
+   
+      <div class="align-items-center">
+        <center>
+          <h1>Flowers AI</h1>
+          <h2>Upload a flower image</h2>
+        </center>
+        <br>
+        <form action="" method="POST" enctype="multipart/form-data">
+
+          <div class="form-group">
+            <label>Select image</label>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" name="file" id="file">
+              <label class="custom-file-label" for="file">Select image...</label>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+        <br>
+
+        <h2>Prediction</h2>
+        <br>
+        <table class="table">
+            <tr>
+              <th>Image</th>
+              <th>Prediction</th>
+            </tr>
+            <tr>
+              {% block content %}{% endblock %}
+            </tr>
+        </table>
+      </div>
+     
+    </div>
+  </body>
+
+</html>
+ 
