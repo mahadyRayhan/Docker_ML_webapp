@@ -18,7 +18,7 @@ But I use an Image-data-generator for some basic image augmentations. Also, I us
 
 I train the model for just 50 epochs. Here is how the training graph looks like:
 
-trainging plot png
+![](images/unfrozen.png)
 
 ## Integrate the classifier in a flask web app
 
@@ -26,11 +26,11 @@ I am not a professional web developer, so my web-Ui may not be that much but it 
 
 Here is the initial UI.
 
-initial ui png
+![](images/starting_ui.png)
 
 Upload an image and click the submit button. The input image and the output label will be displayed under the input form. The model may not work all the time as it is not trained in a proper way. Here is how the page will look like after the prediction.
 
-predict ui png
+![](images/prediction_ui.png)
 
 ## Dockerize the web app
 
