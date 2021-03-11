@@ -133,7 +133,7 @@ this command will download the TensorFlow-GPU version with python 3 from the doc
 		CMD python main.py
 
 "main.py" is the starting file for the whole program.
-<pre>
+</pre>
 
 After writing all the comands in the "Dockerfile", next we will build the docker image for our web app. Do that the command is: >sudo DOCKER_BUILDKIT=1 docker build -t flower_api .
 
