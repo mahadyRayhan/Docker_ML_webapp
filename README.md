@@ -106,7 +106,7 @@ expected data directory by TensorFlow.
 
 After everyting is being done, now we will create our Dockerfile. There are few basic commands we have to write in this file:
 
-<pre>
+
 1. "From"
 	"From" describe which docker image system will fetch from the docker hub. As I am using Tensorflow 2, I fetch the latest version from the docker hub. The command is:
 		FROM tensorflow/tensorflow:latest-gpu-py3
@@ -114,12 +114,13 @@ After everyting is being done, now we will create our Dockerfile. There are few 
 this command will download the TensorFlow-GPU version with python 3 from the docker hub.
 
 2. "Copy"
-	"Copy" tells us from where the files should be copied, and where to save in the newly downloaded docker container (downloaded using the FROM command). I created the
-	Dockerfile in the same directory as all my other files. and I like to copy all the files in "/usr/app/" directory in the newly downloaded docker container. So the
-	command will be:
-		COPY . /usr/app/
+	"Copy" tells us from where the files should be copied, and where to save in the newly downloaded docker container
+	(downloaded using the FROM command). I created the Dockerfile in the same directory as all my other files. and I 
+	like to copy all the files in "/usr/app/" directory in the newly downloaded docker container. So the command will be:
+	>>COPY . /usr/app/
 
-"." means copy all the files from the present directory. This command copy all the files from the present directory to "/usr/app/" directory.
+"." means copy all the files from the present directory. This command copy all the files from the present directory to 
+"/usr/app/" directory.
 
 3. EXPOSE
 	Dedicate a port for running this web app. The command is:
@@ -127,18 +128,21 @@ this command will download the TensorFlow-GPU version with python 3 from the doc
 
 
 4. WORKDIR
-	The directory from where the full web app will run. As I copy all the files in "/usr/app/" directory, so I initialize this directory as my working directory.
+	The directory from where the full web app will run. As I copy all the files in "/usr/app/" directory, so I initialize
+	this directory as my working directory.
 
 5. RUN
-	Run is used for installing the requirements. I wrote all the required dependencies with the respective version in a "requirements.txt" file. So the command is:
-		RUN pip install -r requirements.txt
+	Run is used for installing the requirements. I wrote all the required dependencies with the respective version in a 
+	"requirements.txt" file. So the command is:
+	>>RUN pip install -r requirements.txt
 
 6. CMD
-	This command said from which script the whole process will run. this is the same command we regularly use "python file_name.py".So the command is:
-		CMD python main.py
+	This command said from which script the whole process will run. this is the same command we regularly use 
+	"python file_name.py".So the command is:
+	>>CMD python main.py
 
 "main.py" is the starting file for the whole program.
-</pre>
+
 
 After writing all the comands in the "Dockerfile", next we will build the docker image for our web app. Do that the command is: 
 >sudo DOCKER_BUILDKIT=1 docker build -tflower_api .
