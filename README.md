@@ -99,7 +99,10 @@ uploads - contain all the images uploaded from the web UI
 
 All the folders are optional except "templates" as flask by default search the .html file in a templates folder.
 
-<strong>NOTE:</strong> if you want to train the image classifier like me (using flow-from-directory), the structure of the dataset folder should be similar to me as it is the expected data directory by TensorFlow.
+<strong>NOTE:</strong> if you want to train the image classifier like me (using flow-from-directory), the structure of the dataset folder should be similar to me as it is the
+expected data directory by TensorFlow.
+
+### Docker commands
 
 After everyting is being done, now we will create our Dockerfile. There are few basic commands we have to write in this file:
 
@@ -111,7 +114,9 @@ After everyting is being done, now we will create our Dockerfile. There are few 
 this command will download the TensorFlow-GPU version with python 3 from the docker hub.
 
 2. "Copy"
-	"Copy" tells us from where the files should be copied, and where to save in the newly downloaded docker container (downloaded using the FROM command). I created the Dockerfile in the same directory as all my other files. and I like to copy all the files in "/usr/app/" directory in the newly downloaded docker container. So the command will be:
+	"Copy" tells us from where the files should be copied, and where to save in the newly downloaded docker container (downloaded using the FROM command). I created the
+	Dockerfile in the same directory as all my other files. and I like to copy all the files in "/usr/app/" directory in the newly downloaded docker container. So the
+	command will be:
 		COPY . /usr/app/
 
 "." means copy all the files from the present directory. This command copy all the files from the present directory to "/usr/app/" directory.
@@ -135,7 +140,8 @@ this command will download the TensorFlow-GPU version with python 3 from the doc
 "main.py" is the starting file for the whole program.
 </pre>
 
-After writing all the comands in the "Dockerfile", next we will build the docker image for our web app. Do that the command is: >sudo DOCKER_BUILDKIT=1 docker build -t flower_api .
+After writing all the comands in the "Dockerfile", next we will build the docker image for our web app. Do that the command is: 
+>sudo DOCKER_BUILDKIT=1 docker build -tflower_api .
 
 Here "flower_api" is the name i choose for my docker container and "." means the present directory.
 
